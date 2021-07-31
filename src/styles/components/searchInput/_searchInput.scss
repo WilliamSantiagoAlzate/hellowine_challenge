@@ -1,0 +1,23 @@
+.search-input {
+  @include flex-between;
+  width: 100%;
+  height: 48px;
+  background-color: $gray6;
+  padding-left: 20px;
+
+  &__icon {
+    @include flex-center;
+    width: 62px;
+    height: 100%;
+    background-color: $gray4;
+
+    img {
+      transform: scale(0.7);
+    }
+  }
+
+  &__container {
+    font-size: 1.8rem;
+    width: calc(100% - 92px);
+  }
+}

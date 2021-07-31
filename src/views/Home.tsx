@@ -1,5 +1,9 @@
 import Movies from '../components/Home/Movies';
+import Header from '../components/Layout/Header';
 
 export const HomeView: React.FC = () => (
-  <Movies />
+  <main>
+    <Header />
+    <Movies />
+  </main>
 );

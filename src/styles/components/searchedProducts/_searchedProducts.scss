@@ -1,0 +1,6 @@
+.searched-products {
+  &__container {
+    @include grid-layout;
+    padding: 40px 0;
+  }
+}

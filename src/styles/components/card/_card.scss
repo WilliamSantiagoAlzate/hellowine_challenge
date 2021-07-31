@@ -1,0 +1,65 @@
+.card {
+  width: $card-width;
+  height: $card-height;
+  border: 1px solid $gray5;
+  font-size: 2rem;
+
+  &__main {
+    margin: 0;
+    width: 100%;
+    position: relative;
+  }
+
+  &__image {
+    width: 100%;
+    height: $card-height - $card-footer-height;
+    object-fit: cover;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: $card-footer-height;
+    background-color: $gray7;
+    padding: 20px 30px;
+  }
+
+  &__price-container {
+    @include flex-between;
+  }
+
+  &__sale-price {
+    color: $gray3;
+    font-size: 2.3rem;
+    text-decoration: line-through;
+  }
+
+  &__button {
+    @include flex-center;
+    width: 100%;
+    background-color: $black;
+    color: $white;
+    font-size: 2rem;
+    padding: 10px 0;
+    margin-top: 10px;
+
+    img {
+      width: 30px;
+      margin-right: 10px;
+    }
+
+    &--remove {
+      background-color: $red;
+    }
+
+    &--added {
+      background-color: $gray1;
+    }
+  }
+
+  &__container {
+    @include flex-center;
+  }
+}
