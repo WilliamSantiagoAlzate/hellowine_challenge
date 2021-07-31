@@ -10,6 +10,8 @@ import {
   ERROR_GET_MOVIE_BY_ID
 } from '../consts';
 
+import { moviesState } from '../../types'
+
 export const initialState = {
   movies: [],
   loadingMovies: false,
@@ -17,7 +19,7 @@ export const initialState = {
   loadingMovie: false
 }
 
-export const movies = (state = initialState, action: any) => {
+export const movies = (state: moviesState = initialState, action: any) => {
 	switch (action.type) {
 		case START_GET_POPULAR_MOVIES:
 			return {

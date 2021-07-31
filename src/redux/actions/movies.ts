@@ -4,18 +4,24 @@ import {
   START_GET_MOVIE_BY_ID 
 } from '../consts';
 
+import {
+  getMoviesPayload,
+  searchMoviesPayload,
+  getMoviesByIdPayload
+} from '../../types';
+
 // Actions
-export const getPopularMovies = (page: number) => ({
+export const getPopularMovies = (payload: getMoviesPayload) => ({
   type: START_GET_POPULAR_MOVIES,
-  payload: { page }
+  payload
 });
 
-export const searchMovie = (page: number, query: string) => ({
+export const searchMovie = (payload: searchMoviesPayload) => ({
   type: START_SEARCH_MOVIE,
-  payload: { page, query }
+  payload
 });
 
-export const getMovieById = (id: number) => ({
+export const getMovieById = (payload: getMoviesByIdPayload) => ({
   type: START_GET_MOVIE_BY_ID,
-  payload: { id }
+  payload
 });

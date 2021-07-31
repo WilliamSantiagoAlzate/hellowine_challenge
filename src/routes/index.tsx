@@ -1,4 +1,4 @@
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 // Views
 import { HomeView } from '../views/Home';
 import { DetailView } from '../views/Detail';
@@ -9,8 +9,7 @@ export const Routes: React.FC = () => (
     <Switch>
       <Route component={HomeView} path="/" exact />
       <Route component={DetailView} path="/detail/:id" />
-      <Route component={NotFoundView} path="/404" />
-      <Redirect to="/404" />
+      <Route component={NotFoundView} />
     </Switch>
   </BrowserRouter>
 );
