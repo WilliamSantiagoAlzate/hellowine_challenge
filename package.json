@@ -4,15 +4,15 @@
   "main": "index.tsx",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
+    "@types/enzyme": "^3.10.9",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-router-dom": "^5.1.8",
+    "@types/redux-mock-store": "^1.0.3",
     "axios": "^0.21.1",
+    "enzyme": "^3.11.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
@@ -26,7 +26,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage --watchAll"
   },
   "eslintConfig": {
     "extends": [
@@ -48,5 +49,9 @@
   },
   "author": {
     "name": "William Santiago Alzate"
+  },
+  "devDependencies": {
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
+    "redux-mock-store": "^1.5.4"
   }
 }

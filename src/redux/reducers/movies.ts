@@ -25,7 +25,7 @@ export const movies = (state: moviesState = initialState, action: any) => {
 			return {
 				...state,
 				movies: [],
-        loadingProducts: true
+        loadingMovies: true
 			}
 		case SUCCESS_GET_POPULAR_MOVIES:
 			return {

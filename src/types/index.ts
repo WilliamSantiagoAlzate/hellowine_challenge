@@ -1,4 +1,4 @@
-export type getMoviesPayload = {
+export type getPopularMoviesPayload = {
   page: number
 }
 
@@ -7,13 +7,13 @@ export type searchMoviesPayload = {
   query: string
 }
 
-export type getMoviesByIdPayload = {
+export type getMovieByIdPayload = {
   id: number
 }
 
-export type getMoviesAction = {
+export type getPopularMoviesAction = {
   type: string
-  payload: getMoviesPayload
+  payload: getPopularMoviesPayload
 }
 
 export type searchMoviesAction = {
@@ -21,9 +21,9 @@ export type searchMoviesAction = {
   payload: searchMoviesPayload
 }
 
-export type getMoviesByIdAction = {
+export type getMovieByIdAction = {
   type: string
-  payload: getMoviesByIdPayload
+  payload: getMovieByIdPayload
 }
 
 export type moviesState = {

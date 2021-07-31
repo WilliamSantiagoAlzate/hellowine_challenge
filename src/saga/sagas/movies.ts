@@ -11,20 +11,21 @@ import {
   ERROR_GET_MOVIE_BY_ID
 } from '../../redux/consts';
 import {
-  getMoviesAction,
+  getPopularMoviesAction,
   searchMoviesAction,
-  getMoviesByIdAction
+  getMovieByIdAction
 } from '../../types';
 import { apiCall } from '../apiCall';
 
 const apiUrl: string | undefined = process.env.REACT_APP_API_URL;
 const apiKey: string | undefined = process.env.REACT_APP_API_KEY;
 
-export function * getPopularMoviesRequest({ payload }: getMoviesAction): Generator<any, void, void> {
+export function * getPopularMoviesRequest({ payload }: getPopularMoviesAction): Generator<any, void, void> {
   const { page } = payload;
+  const url: string = `${apiUrl}/movie/popular?api_key=${apiKey}&language=en-US&page=${page}&include_adult=false`;
 
   try {
-    const result = yield call(apiCall, `${apiUrl}/movie/popular?api_key=${apiKey}&language=en-US&page=${page}&include_adult=false`, 'GET');
+    const result = yield call(apiCall, url, 'GET');
     yield put({ type: SUCCESS_GET_POPULAR_MOVIES, result });
   } catch(error) {
     yield put({ type: ERROR_GET_POPULAR_MOVIES, error });
@@ -33,20 +34,23 @@ export function * getPopularMoviesRequest({ payload }: getMoviesAction): Generat
 
 export function * searchMoviessRequest({ payload }: searchMoviesAction): Generator<any, void, void> {
   const { page, query } = payload;
+  const url: string = `${apiUrl}/search/movie?api_key=${apiKey}&language=en-US&page=${page}&include_adult=false&query=${query}`;
+
 
   try {
-    const result = yield call(apiCall, `${apiUrl}/search/movie?api_key=${apiKey}&language=en-US&page=${page}&include_adult=false&query=${query}`, 'GET');
+    const result = yield call(apiCall, url, 'GET');
     yield put({ type: SUCCESS_SEARCH_MOVIE, result });
   } catch(error) {
     yield put({ type: ERROR_SEARCH_MOVIE, error });
   }
 }
 
-export function * getMovieByIdRequest({ payload }: getMoviesByIdAction): Generator<any, void, void> {
+export function * getMovieByIdRequest({ payload }: getMovieByIdAction): Generator<any, void, void> {
   const { id } = payload;
+  const url: string = `${apiUrl}/movie/${id}?api_key=${apiKey}&language=en-US`;
 
   try {
-    const result = yield call(apiCall, `${apiUrl}/movie/${id}?api_key=${apiKey}&language=en-US`, 'GET');
+    const result = yield call(apiCall, url, 'GET');
     yield put({ type: SUCCESS_GET_MOVIE_BY_ID, result });
   } catch(error) {
     yield put({ type: ERROR_GET_MOVIE_BY_ID, error });

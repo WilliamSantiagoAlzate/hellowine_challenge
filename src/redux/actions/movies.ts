@@ -5,13 +5,13 @@ import {
 } from '../consts';
 
 import {
-  getMoviesPayload,
+  getPopularMoviesPayload,
   searchMoviesPayload,
-  getMoviesByIdPayload
+  getMovieByIdPayload
 } from '../../types';
 
 // Actions
-export const getPopularMovies = (payload: getMoviesPayload) => ({
+export const getPopularMovies = (payload: getPopularMoviesPayload) => ({
   type: START_GET_POPULAR_MOVIES,
   payload
 });
@@ -21,7 +21,7 @@ export const searchMovie = (payload: searchMoviesPayload) => ({
   payload
 });
 
-export const getMovieById = (payload: getMoviesByIdPayload) => ({
+export const getMovieById = (payload: getMovieByIdPayload) => ({
   type: START_GET_MOVIE_BY_ID,
   payload
 });
