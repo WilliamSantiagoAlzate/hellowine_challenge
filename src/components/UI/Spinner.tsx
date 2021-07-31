@@ -1,6 +1,5 @@
-enum spinnerColors {
-  black
-}
+import { spinnerColors } from '../../types';
+
 type SpinnerProps = {
   color: spinnerColors
 }

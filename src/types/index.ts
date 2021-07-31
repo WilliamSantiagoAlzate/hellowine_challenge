@@ -36,3 +36,7 @@ export type moviesState = {
 export type stateToProps = {
   movies: moviesState
 }
+
+export enum spinnerColors {
+  black = 'black'
+}

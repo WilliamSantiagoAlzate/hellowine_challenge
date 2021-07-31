@@ -7,7 +7,7 @@ type MoviesProps = {
   getPopularMovies(page: number): void
 }
 
-export const Movies: React.FC<MoviesProps> = ({ getPopularMovies }) => {
+const Movies: React.FC<MoviesProps> = ({ getPopularMovies }) => {
   // Get popular movies
   useEffect(() => {
     getPopularMovies(1);
