@@ -1,3 +1,5 @@
+import Movies from '../components/Home/Movies';
+
 export const HomeView: React.FC = () => (
-  <h2>Home</h2>
+  <Movies />
 );

@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Routes } from './routes/index';
+import { Provider } from 'react-redux';
+import { App } from './App';
+import { storeFn } from './redux/store';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Routes />
+    <Provider store={storeFn()}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
