@@ -1,5 +1,5 @@
 import { mount } from 'enzyme';
-import { ProviderMock } from '../../../__mocks__/ProviderMock';
+import { ProviderMock } from '../../../mocks/ProviderMock';
 import Header from '../../../components/Layout/Header';
 
 describe('<Header />', () => {
@@ -22,6 +22,6 @@ describe('<Header />', () => {
     header.find('input').simulate('change', { 
       target: { value: 'Harry' } 
     });
-    expect(header.find('input').instance().value).toEqual('Harry');
+    expect(header.find('input').props().value).toEqual('Harry');
   })
 })
