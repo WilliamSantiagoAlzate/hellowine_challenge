@@ -16,24 +16,30 @@ export const initialState = {
   movies: [],
   loadingMovies: false,
   movie: {},
-  loadingMovie: false
+  loadingMovie: false,
+	totalPages: 0,
+	isSearching: false,
+	searchQuery: ''
 }
 
 export const movies = (state: moviesState = initialState, action: any) => {
-	const { result } = action;
+	const { result, payload } = action;
 
 	switch (action.type) {
 		case START_GET_POPULAR_MOVIES:
 			return {
 				...state,
 				movies: [],
-        loadingMovies: true
+        loadingMovies: true,
+				totalPages: 0,
+				isSearching: false
 			}
 		case SUCCESS_GET_POPULAR_MOVIES:
 			return {
         ...state,
 				loadingMovies: false,
-				movies: result.results
+				movies: result.results,
+				totalPages: result.total_pages
 			}
     case ERROR_GET_POPULAR_MOVIES:
 			return {
@@ -45,12 +51,16 @@ export const movies = (state: moviesState = initialState, action: any) => {
 				...state,
 				movies: [],
         loadingMovies: true,
+				totalPages: 0,
+				isSearching: true,
+				searchQuery: payload.query
 			}
 		case SUCCESS_SEARCH_MOVIE:
 			return {
         ...state,
 				loadingMovies: false,
-				movies: result.results
+				movies: result.results,
+				totalPages: result.total_pages
 			}
     case ERROR_SEARCH_MOVIE:
 			return {

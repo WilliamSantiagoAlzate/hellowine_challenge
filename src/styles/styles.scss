@@ -8,6 +8,7 @@
 @import "./components/movieCard/movieCard";
 @import "./components/spinner/spinner";
 @import "./components/movies/movies";
+@import "./components/paginator/paginator";
 
 @media (min-width: 1024px) {
   @import "./components/styles-desktop";
