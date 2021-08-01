@@ -5,9 +5,9 @@
 @import "./components/notFound/notFound";
 @import "./components/header/header";
 @import "./components/searchInput/searchInput";
-@import "./components/card/card";
+@import "./components/movieCard/movieCard";
 @import "./components/spinner/spinner";
-@import "./components/searchedProducts/searchedProducts";
+@import "./components/movies/movies";
 
 @media (min-width: 1024px) {
   @import "./components/styles-desktop";

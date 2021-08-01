@@ -1,4 +1,4 @@
-.card {
+.movie-card {
   width: $card-width;
   height: $card-height;
   border: 1px solid $gray5;
@@ -26,14 +26,13 @@
     padding: 20px 30px;
   }
 
-  &__price-container {
-    @include flex-between;
+  &__title {
+    font-size: 2.5rem;
+    text-align: center
   }
 
-  &__sale-price {
-    color: $gray3;
-    font-size: 2.3rem;
-    text-decoration: line-through;
+  &__description {
+    font-size: 1.8rem;
   }
 
   &__button {
@@ -44,19 +43,6 @@
     font-size: 2rem;
     padding: 10px 0;
     margin-top: 10px;
-
-    img {
-      width: 30px;
-      margin-right: 10px;
-    }
-
-    &--remove {
-      background-color: $red;
-    }
-
-    &--added {
-      background-color: $gray1;
-    }
   }
 
   &__container {

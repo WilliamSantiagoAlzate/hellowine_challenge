@@ -3,14 +3,15 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import SearchInput from '../UI/SearchInput';
 import SearchIcon from '../../assets/search-icon.svg';
-import { searchMovie } from '../../redux/actions/movies';
+import { searchMovie, getPopularMovies } from '../../redux/actions/movies';
 import debounce from 'lodash.debounce';
 
 type HeaderProps = {
-  searchMovie(page: number, query: string): any
+  searchMovie(page: number, query: string): void
+  getPopularMovies(page: number): void
 }
 
-const Header: React.FC<HeaderProps> = ({ searchMovie }) => { 
+const Header: React.FC<HeaderProps> = ({ searchMovie, getPopularMovies }) => { 
   const [movie, setMovieName] = useState('');
 
   const onChange = (value: string) => {
@@ -19,8 +20,12 @@ const Header: React.FC<HeaderProps> = ({ searchMovie }) => {
   }
 
   const search = useCallback((value: string) => {
-    searchMovie(1, value);
-  }, [searchMovie])
+    if (value) {
+      searchMovie(1, value);
+    } else {
+      getPopularMovies(1);
+    }
+  }, [searchMovie, getPopularMovies])
 
   const debouncedSearch = useMemo(() => debounce(search, 1000), [search]); 
 
@@ -43,6 +48,9 @@ const mapDispatchToProps = (dispatch: Dispatch<any>) => ({
   searchMovie(page: number, query: string) {
     dispatch(searchMovie({ page, query }))
   },
+  getPopularMovies(page: number) {
+    dispatch(getPopularMovies({ page }))
+  }
 });
 
 export default connect(null, mapDispatchToProps)(Header);
