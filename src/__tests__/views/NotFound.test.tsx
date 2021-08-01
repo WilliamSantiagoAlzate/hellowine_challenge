@@ -1,5 +1,5 @@
 import { mount } from 'enzyme';
-import { ProviderMock } from '../../__mocks__/ProviderMock';
+import { ProviderMock } from '../../mocks/ProviderMock';
 import { NotFoundView } from '../../views/NotFound';
 
 describe('<NotFoundView />', () => {

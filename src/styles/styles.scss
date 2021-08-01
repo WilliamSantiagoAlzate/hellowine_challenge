@@ -1,0 +1,15 @@
+@import "./base/variables";
+@import "./base/base";
+@import "./base/mixins";
+
+@import "./components/notFound/notFound";
+@import "./components/header/header";
+@import "./components/searchInput/searchInput";
+@import "./components/movieCard/movieCard";
+@import "./components/spinner/spinner";
+@import "./components/movies/movies";
+@import "./components/paginator/paginator";
+
+@media (min-width: 1024px) {
+  @import "./components/styles-desktop";
+}

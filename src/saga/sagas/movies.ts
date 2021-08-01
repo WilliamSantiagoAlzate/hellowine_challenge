@@ -20,9 +20,9 @@ import { apiCall } from '../apiCall';
 const apiUrl: string | undefined = process.env.REACT_APP_API_URL;
 const apiKey: string | undefined = process.env.REACT_APP_API_KEY;
 
-export function * getPopularMoviesRequest({ payload }: getPopularMoviesAction): Generator<any, void, void> {
+export function * getPopularMoviesRequest({ payload }: getPopularMoviesAction): Generator<any, any, any> {
   const { page } = payload;
-  const url: string = `${apiUrl}/movie/popular?api_key=${apiKey}&language=en-US&page=${page}&include_adult=false`;
+  const url: string = `${apiUrl}/movie/popular?api_key=${apiKey}&language=es-CO&page=${page}&include_adult=false`;
 
   try {
     const result = yield call(apiCall, url, 'GET');
@@ -32,9 +32,9 @@ export function * getPopularMoviesRequest({ payload }: getPopularMoviesAction): 
   }
 }
 
-export function * searchMoviessRequest({ payload }: searchMoviesAction): Generator<any, void, void> {
+export function * searchMoviessRequest({ payload }: searchMoviesAction): Generator<any, any, any> {
   const { page, query } = payload;
-  const url: string = `${apiUrl}/search/movie?api_key=${apiKey}&language=en-US&page=${page}&include_adult=false&query=${query}`;
+  const url: string = `${apiUrl}/search/movie?api_key=${apiKey}&language=es-CO&page=${page}&include_adult=false&query=${query}`;
 
 
   try {
@@ -45,9 +45,9 @@ export function * searchMoviessRequest({ payload }: searchMoviesAction): Generat
   }
 }
 
-export function * getMovieByIdRequest({ payload }: getMovieByIdAction): Generator<any, void, void> {
+export function * getMovieByIdRequest({ payload }: getMovieByIdAction): Generator<any, any, any> {
   const { id } = payload;
-  const url: string = `${apiUrl}/movie/${id}?api_key=${apiKey}&language=en-US`;
+  const url: string = `${apiUrl}/movie/${id}?api_key=${apiKey}&language=es-CO`;
 
   try {
     const result = yield call(apiCall, url, 'GET');

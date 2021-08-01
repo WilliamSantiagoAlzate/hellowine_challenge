@@ -31,8 +31,15 @@ export type moviesState = {
   loadingMovies: boolean
   movie: any
   loadingMovie: boolean
+  totalPages: number
+  isSearching: boolean
+  searchQuery: string
 }
 
 export type stateToProps = {
   movies: moviesState
+}
+
+export enum spinnerColors {
+  black = 'black'
 }

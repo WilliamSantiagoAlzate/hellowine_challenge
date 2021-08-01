@@ -1,0 +1,49 @@
+// Reset some global properties
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  // Set font size to 1rem === 10px
+  font-size: 62.5%;
+  font-family: $roboto;
+}
+
+// Reset <button> styles
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+// Reset <input> styles
+input {
+  border: none;
+  background-color: transparent;
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+// Reset <select> styles
+select {
+  border: none;
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+// Reset <a> styles
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+// Reset <li> styles
+li {
+  list-style: none;
+}

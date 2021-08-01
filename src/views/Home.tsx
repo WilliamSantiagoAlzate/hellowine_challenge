@@ -1,5 +1,11 @@
 import Movies from '../components/Home/Movies';
+import Paginator from '../components/Home/Paginator';
+import Header from '../components/Layout/Header';
 
 export const HomeView: React.FC = () => (
-  <Movies />
+  <main>
+    <Header />
+    <Movies />
+    <Paginator />
+  </main>
 );

@@ -10,7 +10,7 @@ import {
   ERROR_GET_MOVIE_BY_ID
 } from '../../../redux/consts';
 import { movies, initialState } from '../../../redux/reducers/movies';
-import { movie, movies as moviesData } from '../../../__mocks__/data';
+import { movie, movies as moviesData } from '../../../mocks/data';
 
 //Do test of app reducer
 describe('Movies reducers', () => {
@@ -28,13 +28,14 @@ describe('Movies reducers', () => {
   });
 
   test('Set new movies and remove loading movies', () => {
-    const result = { results: moviesData }
+    const result = { results: moviesData, total_pages: 100 }
     expect(
       movies(initialState, { type: SUCCESS_GET_POPULAR_MOVIES, result })
     ).toEqual({
       ...initialState,
       loadingMovies: false,
-      movies: moviesData
+      movies: moviesData,
+      totalPages: 100
     });
   });
 
@@ -48,22 +49,26 @@ describe('Movies reducers', () => {
   });
 
   test('Set loading movies for search', () => {
+    const payload = { query: 'Harry'};
     expect(
-      movies(initialState, { type: START_SEARCH_MOVIE })
+      movies(initialState, { type: START_SEARCH_MOVIE, payload })
     ).toEqual({ 
       ...initialState,
       loadingMovies: true,
+      isSearching: true,
+      searchQuery: payload.query
     });
   });
 
   test('Set new movies and remove loading movies for search', () => {
-    const result = { results: moviesData }
+    const result = { results: moviesData, total_pages: 100 }
     expect(
       movies(initialState, { type: SUCCESS_SEARCH_MOVIE, result})
     ).toEqual({
       ...initialState,
       loadingMovies: false,
-      movies: moviesData
+      movies: moviesData,
+      totalPages: 100
     });
   });
 

@@ -7,7 +7,7 @@ import { NotFoundView } from '../views/NotFound';
 export const Routes: React.FC = () => (
   <Switch>
     <Route component={HomeView} path="/" exact />
-    <Route component={DetailView} path="/detail/:id" />
+    <Route component={DetailView} path="/detalle/:id" />
     <Route component={NotFoundView} />
   </Switch>
 );
