@@ -6,7 +6,7 @@ describe('<Header />', () => {
   test('Header component is rendering', () => {
     const header = mount(
       <ProviderMock>
-        <Header />
+        <Header hasSearchInput={false} />
       </ProviderMock>
     );
   
@@ -15,7 +15,7 @@ describe('<Header />', () => {
   test('Search input is changing', () => {
     const header = mount(
       <ProviderMock>
-        <Header />
+        <Header hasSearchInput={true} />
       </ProviderMock>
     );
     
