@@ -45,5 +45,29 @@ a {
 
 // Reset <li> styles
 li {
-  list-style: none;
+  margin-left: 30px
+}
+
+// --- General styles --- //
+
+.button {
+  @include flex-center;
+  font-size: 1.8rem;
+  color: $black;
+  font-weight: bold;
+  background-color: $white;
+  border: 1px solid $black;
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: $black;
+    color: $white;
+  }
+
+  &:disabled {
+    background-color: $gray3;
+    cursor: not-allowed;
+    color: white;
+    border: none;
+  }
 }

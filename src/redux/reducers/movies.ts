@@ -77,7 +77,7 @@ export const movies = (state: moviesState = initialState, action: any) => {
 			return {
         ...state,
 				loadingMovie: false,
-				movie: result.results
+				movie: result
 			}
     case ERROR_GET_MOVIE_BY_ID:
 			return {

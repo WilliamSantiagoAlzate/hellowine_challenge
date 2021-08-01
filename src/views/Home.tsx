@@ -4,7 +4,7 @@ import Header from '../components/Layout/Header';
 
 export const HomeView: React.FC = () => (
   <main>
-    <Header />
+    <Header hasSearchInput={true} />
     <Movies />
     <Paginator />
   </main>

@@ -1,3 +1,13 @@
+import Header from "../components/Layout/Header";
+import Detail from "../components/Detail/Detail";
+import BackButton from "../components/UI/BackButton";
+
 export const DetailView: React.FC = () => (
-  <h2>Detail</h2>
+  <main>
+    <Header hasSearchInput={false} />
+    <section className="movie-detail__back-button">
+      <BackButton />
+    </section>
+    <Detail />
+  </main>
 );

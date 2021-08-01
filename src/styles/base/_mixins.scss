@@ -10,10 +10,22 @@
   align-items: center;
 }
 
+@mixin flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 @mixin grid-layout {
   display: grid;
   grid-gap: 40px;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+@mixin grid($columns) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-gap: 40px;
 }
 
 @mixin spinner{

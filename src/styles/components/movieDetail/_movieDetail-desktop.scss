@@ -1,0 +1,8 @@
+.movie-detail {
+  @include grid(2);
+  padding: 40px;
+
+  &__back-button {
+    padding: 20px 40px 0;
+  }
+}

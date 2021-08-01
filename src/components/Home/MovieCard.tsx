@@ -32,7 +32,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
         <strong>Idioma original: </strong>{lang}
       </p>
       <p className="movie-card__description">{trimText(description, 200)}</p>
-      <Link to={`/detalle/${id}`} className="movie-card__button">
+      <Link to={`/detalle/${id}`} className="button movie-card__button">
         Ver detalle
       </Link>
     </footer>
