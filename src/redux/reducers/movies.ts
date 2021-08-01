@@ -20,6 +20,8 @@ export const initialState = {
 }
 
 export const movies = (state: moviesState = initialState, action: any) => {
+	const { result } = action;
+
 	switch (action.type) {
 		case START_GET_POPULAR_MOVIES:
 			return {
@@ -31,7 +33,7 @@ export const movies = (state: moviesState = initialState, action: any) => {
 			return {
         ...state,
 				loadingMovies: false,
-				movies: action.result.results
+				movies: result.results
 			}
     case ERROR_GET_POPULAR_MOVIES:
 			return {
@@ -48,7 +50,7 @@ export const movies = (state: moviesState = initialState, action: any) => {
 			return {
         ...state,
 				loadingMovies: false,
-				movies: action.result.results
+				movies: result.results
 			}
     case ERROR_SEARCH_MOVIE:
 			return {
@@ -65,7 +67,7 @@ export const movies = (state: moviesState = initialState, action: any) => {
 			return {
         ...state,
 				loadingMovie: false,
-				movie: action.result.results
+				movie: result.results
 			}
     case ERROR_GET_MOVIE_BY_ID:
 			return {
