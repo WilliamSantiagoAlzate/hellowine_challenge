@@ -36,12 +36,9 @@
   }
 
   &__button {
-    @include flex-center;
     width: 100%;
     background-color: $black;
     color: $white;
-    font-size: 2rem;
-    padding: 10px 0;
     margin-top: 10px;
   }
 

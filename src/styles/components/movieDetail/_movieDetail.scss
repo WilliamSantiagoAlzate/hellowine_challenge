@@ -1,0 +1,28 @@
+.movie-detail {
+  @include grid(1);
+  padding: 20px;
+
+  &__container {
+    @include flex-center;
+  }
+
+  &__back-button {
+    @include flex-end;
+    padding: 20px 20px 0;
+  }
+
+  &__image {
+    max-width: 100%;
+  }
+
+  &__title {
+    font-size: 3rem;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  &__description {
+    font-size: 1.8rem;
+    padding-bottom: 10px;
+  }
+}

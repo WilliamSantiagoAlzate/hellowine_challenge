@@ -91,7 +91,7 @@ describe('Movies reducers', () => {
   });
 
   test('Set new movie and remove loading movie', () => {
-    const result = { results: movie }
+    const result = movie;
     expect(
       movies(initialState, { type: SUCCESS_GET_MOVIE_BY_ID, result})
     ).toEqual({

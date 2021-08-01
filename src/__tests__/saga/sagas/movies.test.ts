@@ -31,7 +31,7 @@ describe('Get popular movies request', () => {
   
   it('Success response', () => {
     const getPopularMovies = getPopularMoviesRequest(action);
-    const url: string = `${apiUrl}/movie/popular?api_key=${apiKey}&language=es-CO&page=${action.payload.page}&include_adult=false`;
+    const url: string = `${apiUrl}/movie/popular?api_key=${apiKey}&language=es-MX&page=${action.payload.page}&include_adult=false`;
     
     expect(getPopularMovies.next().value).toEqual(call(apiCall, url, 'GET'));
     expect(getPopularMovies.next().value).toEqual(put({ type: SUCCESS_GET_POPULAR_MOVIES }))
@@ -53,7 +53,7 @@ describe('Search movies request', () => {
   
   it('Success response', () => {
     const searchMovies = searchMoviessRequest(action);
-    const url: string = `${apiUrl}/search/movie?api_key=${apiKey}&language=es-CO&page=${page}&include_adult=false&query=${query}`;
+    const url: string = `${apiUrl}/search/movie?api_key=${apiKey}&language=es-MX&page=${page}&include_adult=false&query=${query}`;
     
     expect(searchMovies.next().value).toEqual(call(apiCall, url, 'GET'));
     expect(searchMovies.next().value).toEqual(put({ type: SUCCESS_SEARCH_MOVIE }))
@@ -74,7 +74,7 @@ describe('Get movie by id request', () => {
   
   it('Success response', () => {
     const getMovieById = getMovieByIdRequest(action);
-    const url: string = `${apiUrl}/movie/${id}?api_key=${apiKey}&language=es-CO`;
+    const url: string = `${apiUrl}/movie/${id}?api_key=${apiKey}&language=es-MX`;
     
     expect(getMovieById.next().value).toEqual(call(apiCall, url, 'GET'));
     expect(getMovieById.next().value).toEqual(put({ type: SUCCESS_GET_MOVIE_BY_ID }))

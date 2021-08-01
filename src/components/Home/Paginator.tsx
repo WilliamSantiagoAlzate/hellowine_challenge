@@ -48,7 +48,7 @@ const Paginator: React.FC<PaginatorProps> = ({
   return (
     <section className="paginator">
       <button 
-        className="paginator__button" 
+        className="button" 
         onClick={prevPage}
         disabled={currentPage === 1}
       >
@@ -58,7 +58,7 @@ const Paginator: React.FC<PaginatorProps> = ({
         <strong>{currentPage}</strong> <span>({totalPages})</span>
       </p>
       <button 
-        className="paginator__button" 
+        className="button" 
         onClick={nextPage}
         disabled={currentPage === totalPages}
       >

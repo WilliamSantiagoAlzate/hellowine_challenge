@@ -9,9 +9,14 @@ import debounce from 'lodash.debounce';
 type HeaderProps = {
   searchMovie(page: number, query: string): void
   getPopularMovies(page: number): void
+  hasSearchInput: boolean
 }
 
-const Header: React.FC<HeaderProps> = ({ searchMovie, getPopularMovies }) => { 
+const Header: React.FC<HeaderProps> = ({ 
+  searchMovie, 
+  getPopularMovies,
+  hasSearchInput 
+}) => { 
   const [movie, setMovieName] = useState('');
 
   const onChange = (value: string) => {
@@ -34,11 +39,13 @@ const Header: React.FC<HeaderProps> = ({ searchMovie, getPopularMovies }) => {
       <Link to="/">
         <h1 className="header__title">MOVIES</h1>
       </Link>
-      <SearchInput
-        value={movie}
-        onChange={onChange}
-        icon={SearchIcon}
-      />
+      {hasSearchInput &&
+        <SearchInput
+          value={movie}
+          onChange={onChange}
+          icon={SearchIcon}
+        />
+      }
     </header>
   )
 };
